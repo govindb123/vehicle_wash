@@ -1,0 +1,109 @@
+/* Book Wash Section */
+.book-section {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  background: #f7f7f7;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    color: #16a085;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    input, select {
+      padding: 12px 15px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: all 0.3s ease;
+
+      &:focus {
+        border-color: #16a085;
+        box-shadow: 0 0 6px rgba(22, 160, 133, 0.3);
+      }
+    }
+
+    button {
+      background-color: #16a085;
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+
+      &:hover {
+        background-color: #1abc9c;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 10px rgba(0,0,0,0.25);
+      }
+    }
+  }
+}
+
+/* Responsive for tablets */
+@media (max-width: 768px) {
+  .book-section {
+    margin: 50px 15px;
+    padding: 35px 15px;
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    form {
+      gap: 15px;
+
+      input, select {
+        font-size: 0.95rem;
+        padding: 10px 12px;
+      }
+
+      button {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+    }
+  }
+}
+
+/* Responsive for mobile */
+@media (max-width: 480px) {
+  .book-section {
+    margin: 40px 10px;
+    padding: 30px 10px;
+
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    form {
+      gap: 12px;
+
+      input, select {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+      }
+
+      button {
+        font-size: 0.95rem;
+        padding: 8px 18px;
+      }
+    }
+  }
+}

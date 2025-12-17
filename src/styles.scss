@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden; /* prevent horizontal scroll */
+  font-family: Arial, sans-serif;
+}
+/* Make wrapper fill full viewport */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full height of viewport */
+}
+
+/* Main content grows to fill space above footer */
+.app-content {
+  flex: 1;
+}
+
+/* Footer styling (inside app-footer component) */
+app-footer {
+  background: #0f1010;
+  color: #fff;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 0.95rem;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  app-footer {
+    font-size: 0.9rem;
+    padding: 12px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  app-footer {
+    font-size: 0.85rem;
+    padding: 10px 12px;
+  }
+}

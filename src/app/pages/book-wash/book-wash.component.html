@@ -1,0 +1,42 @@
+<section class="book-section">
+  <h2>Book a Vehicle Wash</h2>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <input type="text" placeholder="Your Name" formControlName="name" />
+
+    <input type="text" placeholder="Mobile Number" formControlName="mobile" />
+
+    <input type="text" placeholder="House / Flat No" formControlName="houseNo" />
+
+    <input
+      type="text"
+      placeholder="Address (Area / Society / Street)"
+      formControlName="address"
+    />
+
+    <input
+      type="text"
+      placeholder="Vehicle Number (e.g. MH12 AB 1234)"
+      formControlName="vehicleNumber"
+    />
+
+    <!-- ✅ NEW: Google Maps Link -->
+    <input
+      type="url"
+      placeholder="Google Maps Location Link"
+      formControlName="mapLink"
+    />
+
+    <select formControlName="vehicle">
+      <option value="">Select Vehicle</option>
+      <option>Bike</option>
+      <option>Car</option>
+    </select>
+
+    <button type="submit" [disabled]="form.invalid">
+      Confirm Booking
+    </button>
+
+  </form>
+</section>

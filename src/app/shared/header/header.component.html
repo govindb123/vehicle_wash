@@ -1,0 +1,20 @@
+<nav class="header-nav" [class.menu-open]="menuOpen">
+
+  <div class="nav-logo">
+    <span>Vehicle Wash</span>
+    <img src="washlogo.png" alt="Vehicle Wash Logo" />
+  </div>
+
+  <div class="nav-links">
+    <a routerLink="/" (click)="closeMenu()">Home</a>
+    <a routerLink="/services" (click)="closeMenu()">Services</a>
+    <a routerLink="/pricing" (click)="closeMenu()">Pricing</a>
+    <a routerLink="/book" (click)="closeMenu()">Book Wash</a>
+    <a routerLink="/about" (click)="closeMenu()">About</a>
+    <a routerLink="/contact" (click)="closeMenu()">Contact</a>
+  </div>
+
+  <div class="nav-toggle" (click)="toggleMenu()">☰</div>
+
+</nav>
+
