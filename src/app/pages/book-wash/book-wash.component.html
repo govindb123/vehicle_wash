@@ -1,40 +1,49 @@
 <section class="book-section">
-  <h2>Book a Vehicle Wash</h2>
+  <h2>Book a Vehicle To Wash</h2>
 
   <form [formGroup]="form" (ngSubmit)="submit()">
 
-    <input type="text" placeholder="Your Name" formControlName="name" />
+    <input type="text" placeholder="Your Name " formControlName="name" />
 
-    <input type="text" placeholder="Mobile Number" formControlName="mobile" />
+    <!-- Mobile (REQUIRED) -->
+    <input type="text" placeholder="Mobile Number *" formControlName="mobile" />
+    <small class="error" *ngIf="isInvalid('mobile')">
+      <span *ngIf="form.get('mobile')?.errors?.['required']">
+        Mobile number is required
+      </span>
+      <span *ngIf="form.get('mobile')?.errors?.['pattern']">
+        Enter valid 10-digit mobile number
+      </span>
+    </small>
 
     <input type="text" placeholder="House / Flat No" formControlName="houseNo" />
 
-    <input
-      type="text"
-      placeholder="Address (Area / Society / Street)"
-      formControlName="address"
-    />
+    <!-- Address (REQUIRED) -->
+    <input type="text" placeholder="Address *" formControlName="address" />
+    <small class="error" *ngIf="isInvalid('address')">
+      Address is required
+    </small>
 
     <input
       type="text"
-      placeholder="Vehicle Number (e.g. MH12 AB 1234)"
+      placeholder="Vehicle Number "
       formControlName="vehicleNumber"
     />
 
-    <!-- ✅ NEW: Google Maps Link -->
+    <!-- Google Maps Link (Optional) -->
     <input
-      type="url"
-      placeholder="Google Maps Location Link"
+      type="text"
+      placeholder="Google Maps Location Link (Optional)"
       formControlName="mapLink"
     />
 
     <select formControlName="vehicle">
-      <option value="">Select Vehicle</option>
-      <option>Bike</option>
-      <option>Car</option>
+      <option value="">Select Vehicle </option>
+      <option value="Bike">Bike</option>
+      <option value="Car">Car</option>
     </select>
 
-    <button type="submit" [disabled]="form.invalid">
+    <button type="submit">
       Confirm Booking
     </button>
 

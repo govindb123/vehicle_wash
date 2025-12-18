@@ -2,10 +2,24 @@
   <h2>Our Services</h2>
 
   <ul class="services-list">
-    <li>🚗 Car Wash (Exterior & Interior)</li>
-    <li>🏍 Bike Wash</li>
-    <li>🚚 Truck & Bus Washing</li>
-    <li>🧼 Interior Cleaning</li>
-    <li>🌱 Eco-Friendly Waterless Wash</li>
+    <li (click)="openService('carExterior')">🚗 Car Wash (Exterior)</li>
+    <li (click)="openService('carInterior')">🚗 Car Wash (Interior)</li>
+    <li (click)="openService('bikeWash')">🏍 Bike Wash</li>
+    <li (click)="openService('polish')">✨ 3M Polish</li>
   </ul>
 </section>
+
+<!-- Overlay -->
+<div class="overlay" *ngIf="selectedService" (click)="closeService()"></div>
+
+<!-- MESSAGE STYLE POPUP -->
+<div class="message-box" *ngIf="selectedService">
+  <div class="message-header">
+    <span>{{ selectedService.title }}</span>
+    <button class="close-btn" (click)="closeService()">✕</button>
+  </div>
+
+  <div class="message-body">
+    {{ selectedService.description }}
+  </div>
+</div>
